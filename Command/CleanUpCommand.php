@@ -45,6 +45,8 @@ class CleanUpCommand extends Command
 
         $this->cleanUpExpiredJobs($em, $con, $input);
         $this->collectStaleJobs($em);
+
+        return Command::SUCCESS;
     }
 
     private function collectStaleJobs(EntityManager $em)

@@ -53,7 +53,7 @@ class ConcurrencyTest extends BaseTestCase
         $this->assertEquals(array('one', 'two'), $workers);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->databaseFile = tempnam(sys_get_temp_dir(), 'db');
         $this->configFile = tempnam(sys_get_temp_dir(), 'di-cfg');
@@ -77,7 +77,7 @@ CONFIG
         $this->importDatabaseSchema();
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         @unlink($this->databaseFile);
         @unlink($this->configFile);
@@ -116,7 +116,7 @@ CONFIG
 
     private function startWorker($name)
     {
-        $proc = new Process('exec '.PHP_BINARY.' '.escapeshellarg(__DIR__.'/console').' jms-job-queue:run --worker-name='.$name, null, array(
+        $proc = Process::fromShellCommandline('exec '.PHP_BINARY.' '.escapeshellarg(__DIR__.'/console').' jms-job-queue:run --worker-name='.$name, null, array(
             'SYMFONY_CONFIG' => $this->configFile,
         ));
         $proc->start();
