@@ -1,6 +1,6 @@
 {
     "name":         "modix/job-queue-bundle",
-    "description":  "Allows to run and schedule Symfony console commands as background jobs.",
+    "description":  "supports symfony 5 and doctrine common 3",
     "keywords":     ["job","queue", "background", "cron", "scheduled"],
     "homepage":     "http://jmsyst.com/bundles/JMSJobQueueBundle",
     "type":         "symfony-bundle",
@@ -19,6 +19,7 @@
         "symfony/framework-bundle": "^5.0",
         "symfony/error-handler": "^5.0",
         "doctrine/common": "^3.0",
+        "doctrine/doctrine-bundle": "^2.1",
         "symfony/process": "^5.0"
     },
     "require-dev": {
@@ -29,7 +30,6 @@
         "symfony/browser-kit": "*",
         "symfony/finder": "*",
         "symfony/css-selector": "*",
-        "doctrine/doctrine-bundle": "*",
         "doctrine/orm": "*",
         "symfony/twig-bundle": "*",
         "symfony/form": "*",
