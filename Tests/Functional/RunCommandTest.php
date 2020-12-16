@@ -45,7 +45,7 @@ class RunCommandTest extends BaseTestCase
     {
         $job = new Job('jms-job-queue:successful-cmd');
         $this->em->persist($job);
-        $this->em->flush($job);
+        $this->em->flush();
 
         $this->runConsoleCommand(array('--max-runtime' => 1, '--worker-name' => 'test'));
         $this->assertEquals('finished', $job->getState());
@@ -183,7 +183,7 @@ OUTPUT
         $job = new Job('jms-job-queue:sometimes-failing-cmd', array(time()));
         $job->setMaxRetries(5);
         $this->em->persist($job);
-        $this->em->flush($job);
+        $this->em->flush();
 
         $this->runConsoleCommand(array('--max-runtime' => 12, '--verbose' => null, '--worker-name' => 'test'));
 
@@ -197,7 +197,7 @@ OUTPUT
         $job = new Job('jms-job-queue:never-ending');
         $job->setMaxRuntime(1);
         $this->em->persist($job);
-        $this->em->flush($job);
+        $this->em->flush();
 
         $this->runConsoleCommand(array('--max-runtime' => 1, '--worker-name' => 'test'));
         $this->assertEquals('terminated', $job->getState());
@@ -263,7 +263,7 @@ OUTPUT
     {
         $job = new Job('jms-job-queue:throws-exception-cmd');
         $this->em->persist($job);
-        $this->em->flush($job);
+        $this->em->flush();
 
         $this->assertNull($job->getStackTrace());
         $this->assertNull($job->getMemoryUsage());
