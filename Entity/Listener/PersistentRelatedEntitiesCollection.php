@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\Common\Collections\Expr\ClosureExpressionVisitor;
 use Doctrine\Common\Collections\Selectable;
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Registry as ManagerRegistry;
 use JMS\JobQueueBundle\Entity\Job;
 
 /**

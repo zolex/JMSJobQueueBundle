@@ -2,7 +2,7 @@
 
 namespace JMS\JobQueueBundle\Command;
 
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Registry as ManagerRegistry;
 use Doctrine\ORM\EntityManager;
 use JMS\JobQueueBundle\Entity\Job;
 use Symfony\Component\Console\Command\Command;
