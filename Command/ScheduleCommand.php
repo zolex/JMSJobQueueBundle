@@ -106,7 +106,7 @@ class ScheduleCommand extends Command
                 $job = $scheduler->createJob($name, $lastRunAt);
                 $em = $this->registry->getManagerForClass(Job::class);
                 $em->persist($job);
-                $em->flush($job);
+                $em->flush();
             }
         }
     }
