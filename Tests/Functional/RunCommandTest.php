@@ -276,7 +276,7 @@ OUTPUT
         $this->assertNotNull($job->getMemoryUsageReal());
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->createClient(array('config' => 'persistent_db.yml'));
 
