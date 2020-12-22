@@ -6,7 +6,7 @@
     "type":         "symfony-bundle",
     "license":      "Apache-2.0",
     "replace": {
-        "jms/job-queue-bundle": "self.version"
+        "jms/job-queue-bundle": "*"
     },
     "authors": [
         {
@@ -18,7 +18,7 @@
         "php": "^7.1",
         "symfony/framework-bundle": "^5.0",
         "symfony/error-handler": "^5.0",
-        "doctrine/common": "^2.3",
+        "doctrine/common": "^3.0",
         "symfony/process": "^5.0"
     },
     "require-dev": {
