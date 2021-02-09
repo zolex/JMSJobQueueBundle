@@ -34,7 +34,7 @@
         "symfony/twig-bundle": "*",
         "symfony/form": "*",
         "symfony/validator": "*",
-        "phpunit/phpunit": "^6.0",
+        "phpunit/phpunit": "^9.4",
         "symfony/intl": "*"
     },
     "suggest": {
