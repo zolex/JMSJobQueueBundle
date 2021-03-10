@@ -1,4 +1,4 @@
-fork to support symfony 5 and doctrine common 3 
+Support for PHP 8, Symfony 5 and Doctrine Common 3
 
 JMSJobQueueBundle
 =================
