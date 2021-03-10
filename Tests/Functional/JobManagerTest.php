@@ -38,12 +38,10 @@ class JobManagerTest extends BaseTestCase
         $this->assertSame($a2, $this->jobManager->getJob('a'));
     }
 
-    /**
-     * @expectedException RuntimeException
-     * @expectedExceptionMessage Found no job for command
-     */
     public function testGetOneThrowsWhenNotFound()
     {
+        $this->expectException(\RuntimeException::class);
+        $this->expectExceptionMessage("Found no job for command");
         $this->jobManager->getJob('foo');
     }
 
@@ -287,7 +285,7 @@ class JobManagerTest extends BaseTestCase
         $this->assertTrue($defEm->contains($reloadedWagon->train));
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->createClient();
         $this->importDatabaseSchema();
