@@ -37,7 +37,7 @@ class JobManager
     private $dispatcher;
     private $registry;
     private $retryScheduler;
-    
+
     public function __construct(ManagerRegistry $managerRegistry, EventDispatcherInterface $eventDispatcher, RetryScheduler $retryScheduler)
     {
         $this->registry = $managerRegistry;
@@ -71,7 +71,7 @@ class JobManager
 
         $job = new Job($command, $args, false);
         $this->getJobManager()->persist($job);
-        $this->getJobManager()->flush($job);
+        $this->getJobManager()->flush();
 
         $firstJob = $this->getJobManager()->createQuery("SELECT j FROM JMSJobQueueBundle:Job j WHERE j.command = :command AND j.args = :args ORDER BY j.id ASC")
              ->setParameter('command', $command)
@@ -82,13 +82,13 @@ class JobManager
         if ($firstJob === $job) {
             $job->setState(Job::STATE_PENDING);
             $this->getJobManager()->persist($job);
-            $this->getJobManager()->flush($job);
+            $this->getJobManager()->flush;
 
             return $job;
         }
 
         $this->getJobManager()->remove($job);
-        $this->getJobManager()->flush($job);
+        $this->getJobManager()->flush();
 
         return $firstJob;
     }
@@ -424,7 +424,7 @@ class JobManager
 
         return count($result);
     }
-    
+
     private function getJobManager(): EntityManager
     {
         return $this->registry->getManagerForClass(Job::class);

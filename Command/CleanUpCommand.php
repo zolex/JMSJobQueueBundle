@@ -19,7 +19,7 @@ class CleanUpCommand extends Command
     private $jobManager;
     private $registry;
 
-    public function __construct(ManagerRegistry $registry, JobManager $jobManager)
+    public function __construct(Registry $registry, JobManager $jobManager)
     {
         parent::__construct();
 
