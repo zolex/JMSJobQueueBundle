@@ -1,5 +1,8 @@
 Support for PHP 8, Symfony 5 and Doctrine Common 3
 
+[![Build Status](https://travis-ci.com/zolex/JMSJobQueueBundle.svg?branch=master)](https://travis-ci.com/zolex/JMSJobQueueBundle)
+
+
 JMSJobQueueBundle
 =================
 
