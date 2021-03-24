@@ -35,6 +35,7 @@ use Symfony\Component\ErrorHandler\Exception\FlattenException;
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  */
 class Job
+
 {
     /** State if job is inserted, but not yet ready to be started. */
     const STATE_NEW = 'new';
