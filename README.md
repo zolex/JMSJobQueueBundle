@@ -2,6 +2,8 @@ Fork from original JMSJobQueueBundle to support PHP 8, Symfony 5 and Doctrine Co
 
 [![Build Status](https://travis-ci.com/zolex/JMSJobQueueBundle.svg?branch=master)](https://travis-ci.com/zolex/JMSJobQueueBundle)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=zolex_JMSJobQueueBundle&metric=alert_status)](https://sonarcloud.io/dashboard?id=zolex_JMSJobQueueBundle)
+
 
 JMSJobQueueBundle
 =================
