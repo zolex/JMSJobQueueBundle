@@ -32,7 +32,7 @@ class ScheduleCommand extends Command
         $this->cronCommands = $cronCommands;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setDescription('Schedules jobs at defined intervals')
@@ -41,7 +41,7 @@ class ScheduleCommand extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $maxRuntime = $input->getOption('max-runtime');
         if ($maxRuntime > 300) {
@@ -89,7 +89,7 @@ class ScheduleCommand extends Command
      * @param JobScheduler[] $jobSchedulers
      * @param \DateTime[] $jobsLastRunAt
      */
-    private function scheduleJobs(OutputInterface $output, array $jobSchedulers, array &$jobsLastRunAt)
+    private function scheduleJobs(OutputInterface $output, array $jobSchedulers, array &$jobsLastRunAt): void
     {
         foreach ($jobSchedulers as $name => $scheduler) {
             $lastRunAt = $jobsLastRunAt[$name];
@@ -111,7 +111,7 @@ class ScheduleCommand extends Command
         }
     }
 
-    private function acquireLock($commandName, \DateTime $lastRunAt)
+    private function acquireLock($commandName, \DateTime $lastRunAt): array
     {
         /** @var EntityManager $em */
         $em = $this->registry->getManagerForClass(CronJob::class);
@@ -144,7 +144,7 @@ class ScheduleCommand extends Command
         return array(false, $cronJob->getLastRunAt());
     }
 
-    private function populateJobSchedulers()
+    private function populateJobSchedulers(): array
     {
         $schedulers = [];
         foreach ($this->schedulers as $scheduler) {
@@ -166,7 +166,7 @@ class ScheduleCommand extends Command
         return $schedulers;
     }
 
-    private function populateJobsLastRunAt(EntityManager $em, array $jobSchedulers)
+    private function populateJobsLastRunAt(EntityManager $em, array $jobSchedulers): array
     {
         $jobsLastRunAt = array();
 

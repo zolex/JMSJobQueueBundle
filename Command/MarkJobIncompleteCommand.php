@@ -26,7 +26,7 @@ class MarkJobIncompleteCommand extends Command
         $this->jobManager = $jobManager;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setDescription('Internal command (do not use). It marks jobs as incomplete.')
@@ -34,7 +34,7 @@ class MarkJobIncompleteCommand extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         /** @var EntityManager $em */
         $em = $this->registry->getManagerForClass(Job::class);
