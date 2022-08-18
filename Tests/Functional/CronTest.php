@@ -35,7 +35,7 @@ class CronTest extends BaseTestCase
         $this->app->setAutoExit(false);
         $this->app->setCatchExceptions(false);
 
-        $this->em = self::$kernel->getContainer()->get('doctrine')->getManagerForClass('JMSJobQueueBundle:Job');
+        $this->em = self::$kernel->getContainer()->get('doctrine')->getManagerForClass(Job::class);
     }
 
     private function doRun(array $args = array())
