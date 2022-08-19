@@ -451,6 +451,6 @@ class RunCommand extends Command
 
     private function getEntityManager(): ObjectManager
     {
-        return /** @var ObjectManager */ $this->registry->getManagerForClass('JMSJobQueueBundle:Job');
+        return /** @var ObjectManager */ $this->registry->getManagerForClass(Job::class);
     }
 }
