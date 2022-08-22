@@ -27,8 +27,8 @@ use Symfony\Component\ErrorHandler\Exception\FlattenException;
 /**
  * @ORM\Entity
  * @ORM\Table(name = "jms_jobs", indexes = {
- *     @ORM\Index("cmd_search_index", columns = {"command"}),
- *     @ORM\Index("sorting_index", columns = {"state", "priority", "id"}),
+ *     @ORM\Index(name = "cmd_search_index", columns = {"command"}),
+ *     @ORM\Index(name = "sorting_index", columns = {"state", "priority", "id"}),
  * })
  * @ORM\ChangeTrackingPolicy("DEFERRED_EXPLICIT")
  *
