@@ -1,5 +1,5 @@
 {
-    "name":         "zolex/job-queue-bundle",
+    "name":         "jbdumaine/job-queue-bundle",
     "description":  "Support for PHP 8, Symfony 5 and Doctrine Common 3",
     "keywords":     ["job","queue", "background", "cron", "scheduled"],
     "homepage":     "http://jmsyst.com/bundles/JMSJobQueueBundle",
