@@ -1,20 +1,9 @@
-Fork from original JMSJobQueueBundle to support PHP 8, Symfony 5 and Doctrine Common 3
+# This Fork is abandoned. 
 
-[![Build Status](https://travis-ci.com/zolex/JMSJobQueueBundle.svg?branch=master)](https://travis-ci.com/zolex/JMSJobQueueBundle)
+If you are using my fork of JMS JobQueueBundle from packagist and you need updates, I suggest trying https://github.com/ezsystems/JMSJobQueueBundle 
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=zolex_JMSJobQueueBundle&metric=alert_status)](https://sonarcloud.io/dashboard?id=zolex_JMSJobQueueBundle)
+```bash
+composer remove zolex/job-queue-bundle
+composer install ezsystems/job-queue-bundle
+```
 
-
-JMSJobQueueBundle
-=================
-
-Documentation: 
-[Resources/doc](http://jmsyst.com/bundles/JMSJobQueueBundle)
-    
-
-Code License:
-[Resources/meta/LICENSE](https://github.com/schmittjoh/JMSJobQueueBundle/blob/master/Resources/meta/LICENSE)
-
-
-Documentation License:
-[Resources/doc/LICENSE](https://github.com/schmittjoh/JMSJobQueueBundle/blob/master/Resources/doc/LICENSE)
